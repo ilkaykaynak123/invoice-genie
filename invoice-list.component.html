@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Saved Invoices</h1>
+
+  <table>
+    <thead>
+      <tr><th>Invoice ID</th><th>Client</th><th>Amount</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let invoice of invoices">
+        <td>{{ invoice.id }}</td>
+        <td>{{ invoice.client.name }}</td>
+        <td>{{ invoice.total }}</td>
+        <td>
+          <button (click)="downloadInvoice(invoice.id)">Download PDF</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
